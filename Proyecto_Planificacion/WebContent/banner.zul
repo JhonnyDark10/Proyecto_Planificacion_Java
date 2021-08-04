@@ -1,0 +1,132 @@
+<window  apply="controlador.ControlOpciones" style="text-align: center;"
+	hflex="1" vflex="1" border="normal" 	
+	>
+	
+	<hbox hflex="1" vflex="1" align="center" height="20px">
+		<a>
+			<image src="/iconos/por.png"  />
+		</a>
+		<div style="text-align: center;">
+			<label value="Sistema De Planificación" style="font-size: 0.7em;"/>
+		</div>
+	</hbox>
+	
+	<menubar autodrop="true">
+	    <menu label="Inicio">
+			
+		</menu>
+		<menu label="Archivo">
+			<menupopup>
+				<menuitem label="Buscar" />
+				<menuitem label="Salir" />
+			</menupopup>
+		</menu>
+		<menu label="Visualización">
+			<menupopup>
+				<menuitem label="Contactos Telefónicos"
+					image="/iconos/ss.png" />
+				<menuitem label="Eventos y Treas"
+					image="/widgets/getting_started/menu_toolbar/img/edit_select-all.png" />
+			</menupopup>
+		</menu>
+		<menu label="Datos">
+			<menupopup>
+				<menuitem label="Contactos" />
+				<menuitem label="Empleados" />
+				<menuitem label="Materiales" />
+			</menupopup>
+		</menu>
+		<menu label="Herramientas">
+			<menupopup>
+				<menuitem label="Enviar E-Mail" />
+
+			</menupopup>
+		</menu>
+		<menu label="Acción">
+			<menupopup>
+				<menuitem label="Nuevo Evento" />
+				<menuitem label="Nueva Indisponibilidad" />
+			</menupopup>
+		</menu>
+		<menu label="Actualización">
+			<menupopup>
+				<menuitem label="Categoria Eventos" />
+				<menuitem label="Tipo Eventos" />
+				<menuitem label="Tipo Comisión" />
+				<menuitem label="Tipo Contactos" />
+				<menuitem label="Tipo Departamento" />
+				<menuitem label="Tipo Estado Civil" />
+				<menuitem label="Tipo Indisponibilidad" />
+
+			</menupopup>
+		</menu>
+		<menu label="Help">
+			<menupopup>
+				<menuitem label="Help Content" />
+			</menupopup>
+		</menu>
+	</menubar>
+	<toolbar height="77px">
+		<toolbarbutton height="73px" width="90px"
+			label="Eventos y Tareas" orient="vertical"
+			image="/iconos/Events_icon-icons.com_74693 (2).png"
+			tooltiptext="Nuevo Evento" />
+		<toolbarbutton height="73px" width="90px"
+			label="Indisponibilidad" orient="vertical"
+			image="/iconos/Actions-user-group-delete-icon.png"
+			tooltiptext="Nueva Indisponibilidad" />
+		<toolbarbutton label="|" />
+		<toolbarbutton id="b_contactos" height="73px" width="90px" label="Contactos"
+			orient="vertical" image="/iconos/person_3_icon-icons.com_68899.png"
+			tooltiptext="Nuevo Contacto" 
+			/>
+			
+			 
+		<toolbarbutton height="73px" width="90px" label="Participantes"
+			orient="vertical" image="/iconos/Actions-user-group-new-icon.png"
+			tooltiptext="Nuevo Participante" />
+		<toolbarbutton label="|" />
+		<toolbarbutton height="73px" width="90px" label="Materiales"
+			orient="vertical"
+			image="/iconos/1492531743-icon-sets-school-outline-hand-drawn-iconfinder02_83203.png"
+			tooltiptext="Nuevo Material" />
+		<toolbarbutton height="73px" width="90px" label="Feriados"
+			orient="vertical" image="/iconos/plane-flight-icon.png"
+			tooltiptext="Nuevo Dia Festivo" />
+		<toolbarbutton label="|" />
+       
+       
+        <label id= "hora" value=""/>
+        <combobox><comboitem label="Urgente"/><comboitem label="Normal"/>
+        <comboitem label="Débil"/>
+        </combobox>
+       
+      
+       
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space /><space />
+         <space />
+              
+        <toolbarbutton height="73px" width="90px" 
+        image="/iconos/Status-user-trash-full-icon.png" orient="vertical" label="Eliminar"
+        />
+        
+	</toolbar>
+	
+</window>

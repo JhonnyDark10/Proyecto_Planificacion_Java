@@ -1,0 +1,55 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winMateriales" ?>
+	<window id="winMateriales" apply="controlador.EditarMateriales"
+		hflex="1" vflex="1" closable="true"
+		title="Materiales" border="normal" width="550px">
+				
+<groupbox title="Datos"> 
+<image src="/iconos/document_add_256_icon-icons.com_75994.png" align="left"/>
+<grid>
+
+		<columns>
+			<column align="right" hflex="min"/>
+			<column label=""/>
+		</columns>
+		<rows>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Numero :</cell>
+					<cell><label id="numero" value="@{winMateriales$composer.persona.idMateriales}" /></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Nombre :</cell>
+					<cell><textbox id="nombre"
+						value="@{winMateriales$composer.persona.nombre}" 
+					     constraint="no empty: Debe ingresar el nombre"           
+					               width="200px"
+					               maxlength="255"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Cantidad :</cell>
+					<cell><textbox id="cantidadm"
+						value="@{winMateriales$composer.persona.cantidadM}" 
+					    constraint="no empty: Debe ingresar el nombre"            
+					               width="200px"/></cell>
+					      
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Descripcion :</cell>
+					<cell><textbox id="descripcion"
+						value="@{winMateriales$composer.persona.descripcion}" 
+					     constraint="no empty: Debe ingresar el nombre"           
+					               width="200px"/></cell>
+					      
+				</row>
+				
+			</rows>
+
+</grid>
+<separator></separator>
+</groupbox>
+         <separator></separator>
+		<hlayout>
+			<button id="grabar" label="Grabar"  iconSclass="z-icon-save" />
+			<button id="salir" label="Salir" iconSclass="z-icon-sign-out" />
+		</hlayout>
+	
+	</window>

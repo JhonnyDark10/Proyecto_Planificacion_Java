@@ -1,0 +1,95 @@
+<panel width="100%" border="normal">
+
+	<toolbar height="110px" style="text-align: center;">
+		<include src="/menu.zul" />
+		<toolbarbutton height="73px" width="90px"
+			label="Eventos y Tareas" orient="vertical"
+			image="/iconos/Events_icon-icons.com_74693 (2).png"
+			tooltiptext="Nuevo Evento" 
+			onClick="@command('cargaUrl', url='/Z-EventosTareas/eventosTareas.zul')"
+			/>
+		<toolbarbutton height="73px" width="90px"
+			label="Indisponibilidad" orient="vertical"
+			image="/iconos/Actions-user-group-delete-icon.png"
+			tooltiptext="Nueva Indisponibilidad" 
+			onClick="@command('cargaUrl', url='/Z-Indisponibilidad/indispobilidad.zul')"
+			/>
+		<toolbarbutton label="|" />
+		<toolbarbutton id="b_contactos" height="73px" width="90px"
+			label="Contactos" orient="vertical"
+			image="/iconos/person_3_icon-icons.com_68899.png"
+			tooltiptext="Nuevo Contacto"
+			onClick="@command('cargaUrl', url='/Z-Contactos/listaContactos.zul')"
+			/>
+		<toolbarbutton id="b_participantes" height="73px" width="90px"
+			label="Participantes" orient="vertical"
+			image="/iconos/Actions-user-group-new-icon.png"
+			tooltiptext="Nuevo Participante" 
+			onClick="@command('cargaUrl', url='/Z-Participantes/listaParticipantes.zul')"
+			/>
+		<toolbarbutton label="|" />
+		<toolbarbutton id="b_materiales" height="73px" width="90px"
+			label="Materiales" orient="vertical"
+			image="/iconos/1492531743-icon-sets-school-outline-hand-drawn-iconfinder02_83203.png"
+			tooltiptext="Nuevo Material" 
+			onClick="@command('cargaUrl', url='/Z-Materiales/listaMateriales.zul')"
+			/>
+		<toolbarbutton id="b_feriados" height="73px" width="90px"
+			label="Feriados" orient="vertical"
+			image="/iconos/plane-flight-icon.png"
+			tooltiptext="Nuevo Dia Festivo" 
+			onClick="@command('cargaUrl', url='/Z-Feriados/listaFeriados.zul')"
+			/>
+		<toolbarbutton label="|" />
+
+
+		<label id="hora" value="" />
+		<combobox>
+			<comboitem label="Urgente" />
+			<comboitem label="Normal" />
+			<comboitem label="Débil" />
+		</combobox>
+
+
+
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+
+		
+		<toolbarbutton height="73px" width="90px"
+			image="/iconos/Status-user-trash-full-icon.png" orient="vertical"
+			label="Eliminar" />
+	</toolbar>
+</panel>

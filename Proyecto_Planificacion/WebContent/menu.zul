@@ -1,0 +1,10 @@
+
+<menubar id="grMenu" 
+	children="@load(vm.opciones) @template(empty each.id?'menuitem':'menu')">
+	
+	<template name="menu" var="node">		
+				<menuitem  label="@load(node.titulo)"
+				onClick="@command('cargaUrl', url=node.url)">
+				</menuitem>		    
+	</template>
+</menubar>

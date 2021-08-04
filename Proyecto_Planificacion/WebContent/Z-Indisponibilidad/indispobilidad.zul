@@ -1,0 +1,179 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winParticipantes" ?>
+<window id="winParticipantes" apply="controlador.Indisponibilidades"
+	hflex="1" vflex="1" closable="true" title="Indisponibilidades"
+	border="normal" width="100%" style="background:#EAECEE">
+
+
+	<tabbox width="100%">
+		<tabs>
+			<tab label="Datos" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<groupbox>
+					<space />
+					<space />
+					<label value="Tipos De Indisponibilidad"
+						width="400px" />
+					<space />
+					<space />
+					<combobox
+						model="@{winParticipantes$composer.paises}"
+						selectedItem="@{winParticipantes$composer.persona.indisponibilidad}"
+						value="@{winParticipantes$composer.persona.indisponibilidad.descripcion}"
+						width="150px">
+						<template name="model">
+							<comboitem label="${each.descripcion}" />
+						</template>
+					</combobox>
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<label value="Participantes" width="150px" />
+					<space />
+					<space />
+					<combobox model="@{winParticipantes$composer.civil}"
+						selectedItem="@{winParticipantes$composer.persona.participante}"
+						value="@{winParticipantes$composer.persona.participante.nombre}"
+						width="200px">
+						<template name="model">
+							<comboitem label="${each.nombre} ${each.apellidoPaterno} ${each.apellidoMaterno}"/>
+						</template>
+					</combobox>
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<image src="/iconos/doctor256_24904.png" />
+					<separator />
+					<grid>
+						<columns>
+							<column align="right" hflex="min" />
+							<column label="" />
+						</columns>
+						<rows>
+
+							<row>
+								<cell
+									style="font-weight: bold; color:#636363;">
+									Inicio :
+								</cell>
+								<cell>
+									<space />
+									<space />
+									<label value="Fecha" />
+									<space />
+									<space />
+									<space />
+									<space />
+									<datebox
+									value="@{winParticipantes$composer.persona.fechaInicio}" 
+										/>
+									<space />
+									<space />
+									<label 
+										/>
+									<space />
+									<space />
+									<space />
+									<space />
+									</cell>
+							</row>
+
+
+
+							<row>
+								<cell
+									style="font-weight: bold; color:#636363;">
+									Fin :
+								</cell>
+								<cell>
+									<space />
+									<space />
+									<label value="Fecha" />
+									<space />
+									<space />
+									<space />
+									<space />
+									<datebox
+									value="@{winParticipantes$composer.persona.fechaFin}" 
+										 />
+									<space />
+									<space />
+									<label />
+									<space />
+									<space />
+									<space />
+									<space />
+								
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<checkbox />
+									<label
+										value="Recordatorio E-Mail">
+									</label><image src="/iconos/Map-Marker-Push-Pin-1-Right-Pink-icon.png" />
+								</cell>
+							</row>
+
+						</rows>
+
+					</grid>
+
+					<separator />
+					<separator />
+					<label value="Descripción :">
+
+					</label>
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+
+					<textbox id="descripcion" width="750px"
+						height="155px"
+						value="@{winParticipantes$composer.persona.descripcion}"
+						constraint="no empty: Debe ingresar la descripcion" />
+
+				</groupbox>
+				<separator />
+			
+
+			</tabpanel>
+			<tabpanel></tabpanel>
+		</tabpanels>
+	</tabbox>
+	<hlayout>
+	
+		<button id="grabar" label="Grabar" iconSclass="z-icon-save" />
+		<button id="salir" label="Salir" iconSclass="z-icon-sign-out" />
+	</hlayout>
+
+</window>
+
+

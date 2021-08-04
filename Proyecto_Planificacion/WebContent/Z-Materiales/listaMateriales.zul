@@ -1,0 +1,50 @@
+<?page title="Lista de Materiales" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winListaMateriales" ?>
+<zk>
+	<window id="winListaMateriales" apply="controlador.listaMateriales"
+		hflex="1" vflex="1" height="500px" width="1055px" title="Listado De Materiales" border="normal"
+		closable="true" position="Right,center" style="background:#EAECEE">
+
+		<vlayout vflex="1" hflex="1">
+			<toolbar>
+				<toolbarbutton id="btnNuevo" label="Nuevo"
+					iconSclass="z-icon-plus" />
+				<toolbarbutton id="btnEditar" label="Editar"
+					iconSclass="z-icon-pencil" />
+				<toolbarbutton id="btnEliminar" label="Eliminar"
+					iconSclass="z-icon-trash-o" />
+			</toolbar>
+			<hlayout>
+				<textbox id="txtBuscar" hflex="1" />
+				<button id="btnBuscar" label="Buscar!"
+					iconSclass="z-icon-search" />
+			</hlayout>
+			<hlayout vflex="1" hflex="1" style="background:#85C1E9">
+				<hlayout vflex="1" hflex="1">
+					<listbox id="lstPersonas"
+						model="@{winListaMateriales$composer.personas}" hflex="1"
+						selectedItem="@{winListaMateriales$composer.personaSelecionada}"
+						vflex="1">
+						<listhead>
+							
+							<listheader label="Nombre" />
+							<listheader label="Cantidad" />
+							<listheader label="Descripción" />
+							
+						</listhead>
+
+
+						<template name="model">
+							<listitem>
+								<listcell label="${each.nombre}" />
+								<listcell label="${each.cantidadM}" />
+								<listcell label="${each.descripcion}" />
+								
+							</listitem>
+						</template>
+					</listbox>
+				</hlayout>
+			</hlayout>
+		</vlayout>
+	</window>
+</zk>

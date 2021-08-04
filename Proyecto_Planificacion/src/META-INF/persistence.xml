@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Proyecto_Planificacion" transaction-type="RESOURCE_LOCAL">
+		<class>model.AsignarHorario</class>
+		<class>model.CategoriaEvento</class>
+		<class>model.Comisione</class>
+		<class>model.ComisionesParticipante</class>
+		<class>model.Contacto</class>
+		<class>model.Departamento</class>
+		<class>model.DiasFestivo</class>
+		<class>model.EstadoCivil</class>
+		<class>model.Evento</class>
+		<class>model.EventosMateriale</class>
+		<class>model.EventosParticipante</class>
+		<class>model.Horario</class>
+		<class>model.Indisponibilidad</class>
+		<class>model.IndisponibilidadParticipante</class>
+		<class>model.Materiale</class>
+		<class>model.Participante</class>
+		<class>model.TipoCliente</class>
+		<class>model.TipoEvento</class>
+		<class>model.Opcion</class>
+		<class>model.OpcionPrivilegio</class>
+		<class>model.Privilegio</class>
+		<class>model.Usuario</class>
+		<class>model.UsuarioPrivilegio</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Sistema_Planificacion"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<property name="javax.persistence.jdbc.password" value="admin123"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="eclipselink.jdbc.bind-parameters" value="true"/>
+		</properties>
+	</persistence-unit>
+</persistence>

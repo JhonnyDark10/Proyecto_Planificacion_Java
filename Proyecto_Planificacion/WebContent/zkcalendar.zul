@@ -1,0 +1,25 @@
+<zk>
+	<window>
+		<div >
+			<hlayout >
+				<button label="Diario" />
+				<button id="Anterior" />
+				<button id="Siguiente" />
+				<separator width="50px" />
+				<button label="Dia" width="55px" />
+				<button label="Semana" width="55px"/>
+				<button label="Mes" width="55px"/>
+				<separator width="50px" />
+				
+				<textbox id="filter"/>
+				<button label="Aplicar"/>
+				<button label="Reiniciar"/>
+			</hlayout>
+			<separator bar="true" height="20px"/>
+		
+			<calendar firstDayOfWeek="Sunday" height="1300px" 
+				timeZone="Main=GMT+0" mold="month"/>
+		</div>
+
+	</window>
+</zk>

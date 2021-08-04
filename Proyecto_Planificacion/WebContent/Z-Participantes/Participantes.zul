@@ -1,0 +1,197 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winParticipantes" ?>
+	<window id="winParticipantes" apply="controlador.EditarParticipantes"
+		hflex="1" vflex="1" closable="true"
+		title="Participantes" border="normal" width="550px">
+	
+	
+<tabbox  width="550px">
+    <tabs>
+        <tab label="Datos" />
+        <tab label="Horarios" />
+    </tabs>
+    <tabpanels>
+        <tabpanel>
+        
+        
+				
+<groupbox title="Datos"> 
+<space /><space /><label value="Departamento" width="150px" />
+<space /><space />
+<combobox 
+model="@{winParticipantes$composer.paises}" 
+						selectedItem="@{winParticipantes$composer.persona.departamento}"
+						value="@{winParticipantes$composer.persona.Departamento.nombre}"
+						
+						         width="150px" >
+						     <template name="model">
+						     	<comboitem label="${each.nombre}" 
+						     	            />
+						     </template>
+</combobox>
+<space /><space /><space /><space />
+<space /><space /><space /><space />
+<space /><space /><space /><space />
+<image src="/iconos/UserAdd_40960.png"/>
+<separator/>
+<grid>
+		<columns>
+			<column align="right" hflex="min"/>
+			<column label=""/>
+		</columns>
+		<rows>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Numero :</cell>
+					<cell><label id="numero" value="@{winParticipantes$composer.persona.dniParticipantes}" /></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Cedula :</cell>
+					<cell><textbox id="cedula"
+						value="@{winParticipantes$composer.persona.cedula}" 
+					     constraint="no empty: Debe ingresar el nombre"             
+					               width="200px"
+					               maxlength="255"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Nombre :</cell>
+					<cell><textbox id="nombre"
+						value="@{winParticipantes$composer.persona.nombre}" 
+					     constraint="no empty: Debe ingresar el nombre"             
+					               width="200px"
+					               
+					               maxlength="255"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Apellido Paterno :</cell>
+					<cell><textbox id="apellido_paterno"
+						value="@{winParticipantes$composer.persona.apellidoPaterno}" 
+					    constraint="no empty: Debe ingresar el nombre"              
+					               width="200px"
+					               
+					               maxlength="255"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Apellido Materno :</cell>
+					<cell><textbox id="apellido_materno"
+						value="@{winParticipantes$composer.persona.apellidoMaterno}" 
+					                
+					               width="200px"
+					             
+					               maxlength="255"/></cell>
+				</row>
+				
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Celular :</cell>
+					<cell><textbox id="celular"
+						value="@{winParticipantes$composer.persona.celular}" 
+					                
+					   constraint="no empty: Debe ingresar el nombre"  
+					               width="200px"
+					               
+					               maxlength="255"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Dirección :</cell>
+					<cell><textbox id="direccion" 
+					               value="@{winParticipantes$composer.persona.direccion}"
+					      constraint="no empty: Debe ingresar el nombre"            
+					               multiline="true" 
+					               hflex="1" 
+					               height="10px" /></cell>
+				</row>
+								
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Ciudad :</cell>
+					<cell>
+						<combobox 
+						
+						 
+						value="@{winParticipantes$composer.persona.ciudad}"
+						
+						         width="200px" >
+						     
+						     	 <comboitem label="Ambato"/>
+<comboitem label="Guayaquil"/>
+<comboitem label="Quito"/>
+<comboitem label="Cuenca"/>
+<comboitem label="Esmeraldas"/>
+<comboitem label="Manabí"/>
+<comboitem label="El Oro"/>
+<comboitem label="Los Rios"/>
+<comboitem label="Santa Elena"/>
+<comboitem label="Azuay"/>
+						     
+				
+						    
+						</combobox>
+					</cell>
+				</row>
+<row>
+<label value="Estado Civil" width="150px" />
+<combobox 
+model="@{winParticipantes$composer.civil}" 
+						selectedItem="@{winParticipantes$composer.persona.estadoCivil}"
+						value="@{winParticipantes$composer.persona.EstadoCivil.descripcion}"
+						
+						         width="200px" >
+						     <template name="model">
+						     	<comboitem label="${each.descripcion}" 
+						     	            />
+						     </template>
+</combobox>
+</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Email :</cell>
+					<cell><textbox id="email" 
+					               value="@{winParticipantes$composer.persona.email}"
+					               
+					               width="200px"
+					               constraint="/.+@.+\.[a-z]+/: No es una dirección email."
+					               maxlength="50"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Descripción :</cell>
+					<cell><textbox id="descripcion"
+						value="@{winParticipantes$composer.persona.descripcion}" 
+					                
+					               width="200px"
+					             
+					               maxlength="255"/></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Telefono :</cell>
+					<cell><textbox id="pagina_web"
+						value="@{winParticipantes$composer.persona.telefono}" 
+					                
+					               width="200px"
+					          
+					               maxlength="255"/>
+					</cell>
+ 				</row>
+			</rows>
+
+</grid>
+</groupbox>
+        
+        
+        </tabpanel>
+        <tabpanel >
+        
+        
+        
+        </tabpanel>
+       </tabpanels>
+</tabbox>	
+	
+	
+	
+	
+	
+         
+		<hlayout>
+			<button id="grabar" label="Grabar"  iconSclass="z-icon-save" />
+			<button id="salir" label="Salir" iconSclass="z-icon-sign-out" />
+		</hlayout>
+	
+	</window>
+	
+	

@@ -1,0 +1,48 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winFeriados" ?>
+	<window id="winFeriados" apply="controlador.EditarFeriados"
+		hflex="1" vflex="1" closable="true"
+		title="Feriados" border="normal" width="550px">
+				
+<groupbox title="Datos"> 
+<image src="/iconos/plane-flight-icon.png" align="left"/>
+<grid>
+		<columns>
+			<column align="right" hflex="min"/>
+			<column label=""/>
+		</columns>
+		<rows>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Numero :</cell>
+					<cell><label id="numero" value="@{winFeriados$composer.persona.idDiasFestivos}" /></cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Fecha :</cell>
+					<cell>				               
+					               <datebox id="fecNacimiento" 
+					               value="@{winFeriados$composer.persona.fechaPedido}"
+					               width="200px"
+					               />
+					               
+					               </cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">Descripcion :</cell>
+					<cell><textbox id="descripcion"
+						value="@{winFeriados$composer.persona.descripcion}" 
+					     constraint="no empty: Debe ingresar "           
+					               width="200px"/></cell>
+					      
+				</row>
+				
+			</rows>
+
+</grid>
+<separator></separator>
+</groupbox>
+         <separator></separator>
+		<hlayout>
+			<button id="grabar" label="Grabar"  iconSclass="z-icon-save" />
+			<button id="salir" label="Salir" iconSclass="z-icon-sign-out" />
+		</hlayout>
+	
+	</window>

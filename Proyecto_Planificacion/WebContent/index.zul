@@ -1,0 +1,81 @@
+<zk>
+	<hbox  height="5%">
+		<a>
+			<image src="/iconos/por.png" />
+		</a>
+		<div style="text-align: center;">
+			<label value="Sistema De Planificación"
+				style="font-size: 0.7em;" />
+		<space></space>
+		</div>
+		<h:form id="f" name="f"
+				action="j_spring_security_logout" 
+				method="POST"
+				xmlns:h="native" >
+				
+				<html>
+					<input type="hidden"  name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				</html>
+				<button label="Salir" type="submit"/>
+		</h:form>
+	</hbox>
+				
+	<borderlayout width="100%" vflex="1"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('controlador.Menu') ">
+
+		<north hflex="100%" vflex="1" height="110px" border="none">
+			
+			<include src="/submenu.zul" />
+		</north>
+
+		<west border="none" hflex="1" vflex="1" collapsible="true"
+			title="Búsqueda">
+			<include src="B-Buscar/buscar.zul" />
+		</west>
+
+
+		<center id="mainContent" autoscroll="true">
+			<include src="@bind(vm.formularioActual)" />
+		</center>
+
+
+		<south height="15px" border="none">
+			<div sclass="footer" style="text-align: center;">
+				Copyright © 2018 - Todos los derechos reservados. 
+		Usuario:
+		<label value="@load(vm.nombreUsuario)" />
+		
+			</div>
+			
+		</south>
+
+	</borderlayout>
+
+</zk>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

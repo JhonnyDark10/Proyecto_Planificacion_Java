@@ -1,0 +1,198 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winContactos" ?>
+<window id="winContactos" apply="controlador.EditarContactos" hflex="1"
+	vflex="1" closable="true" title="Contactos" border="normal"
+	width="550px">
+
+	<groupbox title="Datos">
+		<space />
+		<space />
+		<label value="Categoria" width="150px" />
+		<space />
+		<space />
+		<combobox model="@{winContactos$composer.paises}"
+			selectedItem="@{winContactos$composer.persona.tipoCliente}"
+			value="@{winContactos$composer.persona.TipoCliente.descripcion}"
+			width="150px">
+			<template name="model">
+				<comboitem label="${each.descripcion}" />
+			</template>
+		</combobox>
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<space />
+		<image src="/iconos/Office-Client-Male-Light-icon.png" />
+
+		<groupbox>
+			<label value="Nombre De Empresa u Organización"
+				width="150px" />
+			<space />
+			<textbox
+				value="@{winContactos$composer.persona.nombreEmpresa}"
+				constraint="no empty: Debe ingresar el nombre" width="200px"
+				maxlength="255" />
+		</groupbox>
+		<separator />
+
+		<grid>
+			<columns>
+				<column align="right" hflex="min" />
+				<column label="" />
+			</columns>
+			<rows>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Numero :
+					</cell>
+					<cell>
+						<label id="numero"
+							value="@{winContactos$composer.persona.dniCliente}" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Cedula :
+					</cell>
+					<cell>
+						<textbox id="cedula"
+							value="@{winContactos$composer.persona.cedula}"
+							constraint="no empty: Debe ingresar el nombre" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Nombre :
+					</cell>
+					<cell>
+						<textbox id="nombre"
+							value="@{winContactos$composer.persona.nombreContacto}"
+							constraint="no empty: Debe ingresar el nombre" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Apellido Paterno :
+					</cell>
+					<cell>
+						<textbox id="apellido_paterno"
+							value="@{winContactos$composer.persona.apellidoPaterno}"
+							constraint="no empty: Debe ingresar el nombre" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Apellido Materno :
+					</cell>
+					<cell>
+						<textbox id="apellido_materno"
+							value="@{winContactos$composer.persona.apellidoMaterno}"
+							width="200px" maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Teléfono :
+					</cell>
+					<cell>
+						<textbox id="telefono"
+							value="@{winContactos$composer.persona.telefono}" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Celular :
+					</cell>
+					<cell>
+						<textbox id="celular"
+							value="@{winContactos$composer.persona.celular}"
+							constraint="no empty: Debe ingresar el nombre" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Dirección :
+					</cell>
+					<cell>
+						<textbox id="direccion"
+							value="@{winContactos$composer.persona.direccion}"
+							constraint="no empty: Debe ingresar el nombre" multiline="true"
+							hflex="1" height="10px" />
+					</cell>
+				</row>
+
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Ciudad :
+					</cell>
+					<cell>
+						<combobox
+							value="@{winContactos$composer.persona.ciudad}" width="200px">
+
+							<comboitem label="Ambato" />
+							<comboitem label="Guayaquil" />
+							<comboitem label="Quito" />
+							<comboitem label="Cuenca" />
+							<comboitem label="Esmeraldas" />
+							<comboitem label="Manabí" />
+							<comboitem label="El Oro" />
+							<comboitem label="Los Rios" />
+							<comboitem label="Santa Elena" />
+							<comboitem label="Azuay" />
+						</combobox>
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Email :
+					</cell>
+					<cell>
+						<textbox id="email"
+							value="@{winContactos$composer.persona.email}" width="200px"
+							constraint="/.+@.+\.[a-z]+/: No es una dirección email."
+							maxlength="50" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Fax :
+					</cell>
+					<cell>
+						<textbox id="fax"
+							value="@{winContactos$composer.persona.fax}" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+				<row>
+					<cell style="font-weight: bold; color:#636363;">
+						Página Web :
+					</cell>
+					<cell>
+						<textbox id="pagina_web"
+							value="@{winContactos$composer.persona.paginaWeb}" width="200px"
+							maxlength="255" />
+					</cell>
+				</row>
+			</rows>
+
+		</grid>
+	</groupbox>
+
+	<hlayout>
+		<button id="grabar" label="Grabar" iconSclass="z-icon-save" />
+		<button id="salir" label="Salir" iconSclass="z-icon-sign-out" />
+	</hlayout>
+
+</window>

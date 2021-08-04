@@ -1,0 +1,57 @@
+<?page title="Lista de Personas" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winListaParticipantes" ?>
+<zk>
+	<window id="winListaParticipantes" apply="controlador.listaParticipantes"
+		hflex="1" vflex="1" height="500px" width="1055px" title="Listado De Empleados" border="normal"
+		closable="true" position="Right,center" style="background:#EAECEE">
+
+		<vlayout vflex="1" hflex="1">
+			<toolbar>
+				<toolbarbutton id="btnNuevo" label="Nuevo"
+					iconSclass="z-icon-plus" />
+				<toolbarbutton id="btnEditar" label="Editar"
+					iconSclass="z-icon-pencil" />
+				<toolbarbutton id="btnEliminar" label="Eliminar"
+					iconSclass="z-icon-trash-o" />
+			</toolbar>
+			<hlayout>
+				<textbox id="txtBuscar" hflex="1" />
+				<button id="btnBuscar" label="Buscar!"
+					iconSclass="z-icon-search" />
+			</hlayout>
+			<hlayout vflex="1" hflex="1" style="background:#85C1E9">
+				<hlayout vflex="1" hflex="1">
+					<listbox id="lstPersonas"
+						model="@{winListaParticipates$composer.personas}" hflex="1"
+						selectedItem="@{winListaParticipantes$composer.personaSelecionada}"
+						vflex="1">
+						<listhead>
+							<listheader label="Cedula" width="80px" />
+							<listheader label="Departamento" width="100px" />
+							<listheader label="Nombre" />
+							<listheader label="Apellido" />
+							<listheader label="Dirección" />
+							<listheader label="e-mail" width="150px" />
+							<listheader label="Celular" width="80px" />
+						</listhead>
+
+
+						<template name="model">
+							<listitem>
+								<listcell label="${each.cedula}" />
+								<listcell
+									label="${each.departamento.nombre}" />
+								<listcell label="${each.nombre}" />
+								<listcell
+									label="${each.apellidoPaterno}" />
+								<listcell label="${each.direccion}" />
+								<listcell label="${each.email}" />
+								<listcell label="${each.celular}" />
+							</listitem>
+						</template>
+					</listbox>
+				</hlayout>
+			</hlayout>
+		</vlayout>
+	</window>
+</zk>

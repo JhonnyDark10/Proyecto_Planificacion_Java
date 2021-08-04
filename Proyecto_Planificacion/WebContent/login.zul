@@ -1,0 +1,78 @@
+<zk>
+<groupbox style="background:#0E1C78;font-style: oblique;"> 
+<image 
+		src="/iconos/candado.png" height="100px" />
+		
+		<label value ="Aplicación Web Sistema Planificación"
+		style="font-size: 2.5em;color:white"></label>
+</groupbox>
+
+<groupbox vflex="1">
+	<hbox  hflex="1" vflex="1" align="center" pack="center"
+		spacing="20px">
+		<h:form id="f" name="f" action="j_spring_security_check"
+			method="POST" xmlns:h="native">
+			<vlayout>
+				
+               				
+				
+				<window  border="normal"
+					hflex="min"
+					style="background:#0E1C78;color:red;"
+					title="Control De Acceso"
+					>
+					<vbox hflex="min" align="center">
+
+						<!-- Formulario para autenticacion -->
+
+
+
+						<grid hflex="min">
+							<columns>
+								<column hflex="min" align="right" />
+								<column />
+							</columns>
+							<rows>
+								<row>
+									Usuario :
+									<textbox id="u" name="username"
+										width="200px" />
+								</row>
+								<row>
+									Clave :
+									<textbox id="p" name="password"
+										type="password" width="200px" />
+								</row>
+								<row>
+									Recorderme:
+									<checkbox id="r"
+										name="_spring_security_remember_me" />
+								</row>
+							</rows>
+						</grid>
+						<html>
+							<input type="hidden"
+								name="${_csrf.parameterName}" value="${_csrf.token}" />
+						</html>
+						<!-- Procesa el login -->
+						<button id="login" label="Login" type="submit" />
+
+						<html style="color:red"
+							if="${not empty param.login_error}">
+
+							
+							<![CDATA[ Ingreso fallido, intente
+							nuevamente.<br/><br/>
+
+							]]>
+							
+							
+					</html>
+						<!-- Razon: ${SPRING_SECURITY_LAST_EXCEPTION.message} -->
+					</vbox>
+				</window>
+			</vlayout>
+		</h:form>
+	</hbox>
+	</groupbox>
+</zk>

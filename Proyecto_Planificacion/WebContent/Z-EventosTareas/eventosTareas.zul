@@ -1,0 +1,231 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./winParticipantes" ?>
+<window id="winParticipantes" apply="controlador.EventosTareas"
+	hflex="1" vflex="1" closable="true" title="Tareas"
+	border="normal" width="100%" style="background:#EAECEE">
+
+
+	<tabbox width="100%">
+		<tabs>
+			<tab label="Datos" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<groupbox>
+				<space />
+					<space />
+									
+				
+				
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space /><space />
+					<space />
+					<image src="/iconos/folders_red_scheduled_tasks_10933 (1).png" />
+					<space />
+					
+					<label value="Categoria" width="150px" />
+					<space />
+					<combobox model="@{winParticipantes$composer.cevento}"
+						selectedItem="@{winParticipantes$composer.persona.CategoriaEvento}"
+						value="@{winParticipantes$composer.persona.CategoriaEvento.descripcion}"
+						width="78px">
+						<template name="model">
+							<comboitem label="${each.descripcion}"/>
+						</template>
+					</combobox>
+					<space />
+					<space />
+					<space />
+					<label value="Eventos"
+						width="400px" />
+					<space />
+					<space />
+					<combobox
+						model="@{winParticipantes$composer.paises}"
+						selectedItem="@{winParticipantes$composer.persona.TipoEvento}"
+						value="@{winParticipantes$composer.persona.TipoEvento.descripcion}"
+						width="150px">
+						<template name="model">
+							<comboitem label="${each.descripcion}" />
+						</template>
+					</combobox>
+					<space />
+					<space />
+					
+					<label value="Empleados" width="150px" />
+					<space />
+					<space />
+					<combobox model="@{winParticipantes$composer.civil}"
+						selectedItem="@{winParticipantes$composer.persona.Participante}"
+						value="@{winParticipantes$composer.persona.Participante.nombre}"
+						width="200px">
+						<template name="model">
+							<comboitem label="${each.nombre} ${each.apellidoPaterno} ${each.apellidoMaterno}"/>
+						</template>
+					</combobox>
+					<space />
+					<space />
+					
+					<label value="Contactos" width="150px" />
+					<space />
+					<space />
+					<combobox model="@{winParticipantes$composer.civilgana}"
+						selectedItem="@{winParticipantes$composer.persona.contacto}"
+						value="@{winParticipantes$composer.persona.contacto.nombreContacto}"
+						width="200px">
+						<template name="model">
+							<comboitem label="${each.nombreEmpresa} ${each.nombreContacto} ${each.apellidoPaterno}"/>
+						</template>
+					</combobox>
+					<separator></separator>
+					<separator></separator>
+					<grid>
+						<columns>
+							<column align="right" hflex="min" />
+							<column label="" />
+						</columns>
+						<rows>
+
+							<row>
+								<cell
+									style="font-weight: bold; color:#636363;">
+									Inicio :
+								</cell>
+								<cell>
+									<space />
+									<space />
+									<label value="Fecha" />
+									<space />
+									<space />
+									<space />
+									<space />
+									<datebox
+									value="@{winParticipantes$composer.persona.fechaInicio}" 
+										/>
+									<space />
+									<space />
+									<label Value="Hora"
+										/><space /><space />
+									<textbox width="50px" 
+									value="@{winParticipantes$composer.persona.hora}" 
+									/>
+									<space />
+									<space />
+									<space />
+									<space />
+									</cell>
+							</row>
+
+
+
+							<row>
+								<cell
+									style="font-weight: bold; color:#636363;">
+									Fin :
+								</cell>
+								<cell>
+									<space />
+									<space />
+									<label value="Fecha" />
+									<space />
+									<space />
+									<space />
+									<space />
+									<datebox
+									value="@{winParticipantes$composer.persona.fechaFin}" 
+										 />
+									<space />
+									<space />
+									<label />
+									<space />
+									<space />
+									<space />
+									<space />
+								
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<space />
+									<checkbox />
+									<label
+										value="Recordatorio E-Mail">
+									</label><image src="/iconos/Map-Marker-Push-Pin-1-Right-Pink-icon.png" />
+								</cell>
+							</row>
+
+						</rows>
+
+					</grid>
+
+					<separator />
+					<separator />
+					<label value="Descripción :">
+
+					</label>
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+					<space />
+
+					<textbox id="descripcion" width="750px"
+						height="123px"
+						value="@{winParticipantes$composer.persona.descripcion}"
+						constraint="no empty: Debe ingresar la descripcion" />
+
+				</groupbox>
+				<separator />
+			
+
+			</tabpanel>
+			<tabpanel></tabpanel>
+		</tabpanels>
+	</tabbox>
+	<hlayout>
+	
+		<button id="grabar" label="Grabar" iconSclass="z-icon-save" />
+		<button id="salir" label="Salir" iconSclass="z-icon-sign-out" />
+	</hlayout>
+
+</window>
+
+
