@@ -1,7 +1,7 @@
 ### Hi there 👋
 ### Repositorio Flores Jhonny
 
-Proyecto Planificación
+Proyecto Planificación, en modelo vista controlador.
 
 Para su desarrollo se uso:
 
